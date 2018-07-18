@@ -16,7 +16,7 @@ Custom Commands are not yet supported, but we are working on it!
 
 # License
 
-We have a GNU AGPLv3 License. You are allowed to copy our code, but you are required to credit us (RedstoneClaw101 & Phoenix)
+We have a GNU AGPLv3 License. You are allowed to copy our code, but you are required to credit us (RedstoneClaw101 & Lil Curly)
 
 # Support
 
