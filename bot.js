@@ -263,8 +263,8 @@ message.channel.sendMessage(message.channel.send(`= STATISTICS =
 client.on('message', message => {
     if (message.content.startsWith(prefix + "notice")) {
 	    let kickChannel = message.guild.channels.find(`name`, "announcements").send("@everyone Kosh Systems is running in this server.")
-	    }
-	    })
+    }
+    });
     //////////////
 client.login(process.env.TOKEN)
     ///////
