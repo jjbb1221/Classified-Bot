@@ -213,12 +213,6 @@ message.channel.sendMessage(message.channel.send(`= STATISTICS =
     });
     
     /////////////////////
-    cliet.on("message", message => {
-    if (message.content.startsWith(prefix + "invite")) {
-    message.channel.sendMessage("Thank you for using Kosh Systems! Run ;support to join our support server. An auth link can be found there!")
-    }
-    });
-    ////////////////////
     client.on('message', message => {
     if (message.content.startsWith(prefix + "stats")) {
         message.channel.send(`= STATISTICS =
