@@ -195,7 +195,7 @@ client.on('message', message => {
         message.channel.sendMessage("Welcome to the Kosh Help Hotline. Type stats, cmds, about, or support to continue.");
 }
     if (message.content.startsWith("cmds")) {
-	message.channel.sendMessage(";help ;cmds ;ping ;kick ;ban ;unban ;mute ;unmute ;serverinfo ;8ball ;invite ;support");
+	message.channel.sendMessage("prefix (;) + help, cmds, ping, kick, ban, unban, mute, unmute, serverinfo, 8ball, invite, support");
 }
     if (message.content.startsWith("about")) {
 	message.channel.sendMessage("Kosh is the perfect bot for your server. Including fun commands and music for your members while also including moderation for you and your admins. Run ;invite to invite the bot");
