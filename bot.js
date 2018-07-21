@@ -215,7 +215,7 @@ message.channel.sendMessage(message.channel.send(`= STATISTICS =
     /////////////////////
     cliet.on("message", message => {
     if (message.content.startsWith(prefix + "invite")) {
-    message.channel.sendMessage("Thank you for using Kosh Systems! Here is an auth link! Link: https://discordapp.com/api/oauth2/authorize?client_id=468272942086750208&permissions=8&scope=bot")
+    message.channel.sendMessage("Thank you for using Kosh Systems! Run ;support to join our support server. An auth link can be found there!")
     }
     });
     ////////////////////
