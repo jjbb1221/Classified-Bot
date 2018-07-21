@@ -216,7 +216,7 @@ client.on('message', message => {
     if (message.content.startsWith("stats")) {
         message.channel.sendMessage("Displaying Diagnostics")
         message.channel.sendMessage("==DIAGNOSTICS==")
-message.channel.sendMessage(message.channel.send(`= STATISTICS =
+        message.channel.sendMessage(message.channel.send(`= STATISTICS =
 • Mem Usage  :: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
 • Users   :: ${(client.users.size)}
 • Node       :: ${process.version}`, {code: 'asciidoc'}))}
