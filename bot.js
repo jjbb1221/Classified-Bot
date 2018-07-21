@@ -222,9 +222,11 @@ message.channel.sendMessage(message.channel.send(`= STATISTICS =
     }
     });
     //////////////////
-
-}
-);
+    client.on("message", message => {
+    if (message.content.startsWith(prefix + "8ball")) {
+	message.channel.send("I don't feel like doing this...")
+    }
+    });
 ///////////////
 client.on('message', message => {
     if (message.content.startsWith(prefix + "notice")) {
