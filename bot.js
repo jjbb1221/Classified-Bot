@@ -215,7 +215,7 @@ message.channel.sendMessage(message.channel.send(`= STATISTICS =
     /////////////////////
     cliet.on("message", message => {
     if (message.content.startsWith(prefix + "invite")) {
-    message.channel.sendMessage("Thank you for using Kosh Systems! Here is an auth link! Link: https://discordapp.com/api/oauth2/authorize?client_id=468272942086750208&permissions=8&scope=bot");
+    message.channel.sendMessage("Thank you for using Kosh Systems! Here is an auth link! Link: https://discordapp.com/api/oauth2/authorize?client_id=468272942086750208&permissions=8&scope=bot")
     }
     });
     ////////////////////
@@ -263,9 +263,8 @@ message.channel.sendMessage(message.channel.send(`= STATISTICS =
 client.on('message', message => {
     if (message.content.startsWith(prefix + "notice")) {
 	    let kickChannel = message.guild.channels.find(`name`, "announcements").send("@everyone Kosh Systems is running in this server.")
-
-	}
-	})
+	    }
+	    })
     //////////////
 client.login(process.env.TOKEN)
     ///////
