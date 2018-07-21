@@ -222,35 +222,33 @@ message.channel.sendMessage(message.channel.send(`= STATISTICS =
     }
     });
     //////////////////
-    client.on('message', message => {
-    if (message.content.startsWith(prefix + "kick")) {
-        let messageArray = message.content.split(" ");
-        let args = messageArray.slice(1);
-    //!kick @Twisted Reason
+exports.run = (message, bot) => {
+  if (!message.mentions.users.first()) return message.channel.send("**Mention a user or multiple users to kick them.**")
+    let ment = message.mentions.users;
+    let text = []
+    ment.forEach(m => {
+        if (!message.guild.member(m).kickable) {
+            message.channel.send("**Something went wrong when kicking:* "+m.username);          
+        } else {
+            message.guild.member(m).kick().then(() => {
+                text.push(m.username)
+            }).catch(err => message.channel.send("**Something went wrong when kicking:** "+m.username))
+        }
+    });
+    setTimeout(function() {
+        if (text.length === 0) return;
+        message.channel.send(text.join(", ")+" **has been kicked.**", {split:true});
+    }, 1000);
+}
 
-    let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!kUser) return message.channel.send("Can't find user!");
-    let kReason = args.join(" ").slice(22);
-    if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("No can do pal!");
-    if(kUser.hasPermission("ADMINISTRATOR")) return message.channel.send("That person can't be kicked!");
-
-    let kickEmbed = new Discord.RichEmbed()
-    .setDescription("~Kick~")
-    .setColor("#e56b00")
-    .addField("Kicked User", `${kUser} with ID ${kUser.id}`)
-    .addField("Kicked By", `<@${message.author.id}> with ID ${message.author.id}`)
-    .addField("Kicked In", message.channel)
-    .addField("Tiime", message.createdAt)
-    .addField("Reason", kReason);
-
-    let kickChannel = message.guild.channels.find(`name`, "kicks");
-    if(!kickChannel) return message.channel.send("Can't find kicks channel.");
-
-
-
-
-    return;
-  }
+exports.conf = {
+  userPerm:["KICK_MEMBERS"],
+  botPerm:["SEND_MESSAGES", "KICK_MEMBERS"],
+  coolDown:0,
+  dm:true,
+  category:"Moderation",
+  help:"Kick a user.",
+  args:"",
 }
 );
 ///////////////
