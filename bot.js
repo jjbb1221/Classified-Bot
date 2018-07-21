@@ -173,7 +173,7 @@ client.on('message', message => {
 });
 ///////////////////////
 client.on('message', message => {
-    if (message.content === prefix +'Ping') {
+    if (message.content === prefix +'ping') {
         message.channel.sendMessage('**Bringing the ball**')
         .then(msg => {
           msg.edit(`:ping_pong: Pong! (It took: :signal_strength: ${msg.createdTimestamp - message.createdTimestamp}ms to bring the ball!) **Websocket:** ${client.ping}`);
@@ -182,18 +182,8 @@ client.on('message', message => {
 });
 ///////////////////
 client.on('message', message => {
-    if (message.content === prefix +'Cmds') {
-        var embed = new Discord.RichEmbed();
-    embed.setTitle('Cmds')
-      embed.setDescription(`Shows Cmds For Kosh`);
-      embed.setColor('#009000');
-      embed.addField('Cmds: Cmds [Shows This Message] Ping [Shows A Response Time] Eval [Only Authorized People Can Do This] serverinfo [shows server info] Botinfo [Shows  Bot info nothing else] Kick [Kicks a member]');
-      embed.addField('Vips: None :(')
-      embed.addField('For More Information Please Contact a Owner Of Kosh')
-      embed.setFooter("Kosh Systems | V3")
-      embed.setTimestamp()
-    
-      message.channel.sendEmbed(embed);
+    if (message.content === prefix +'cmds') {
+        message.channel.sendMessage("Commands: ;help ;cmds ;ping ;kick ;ban ;unban ;mute ;unmute ;serverinfo ;8ball ;invite ;support")
     }
     });
     ////////////////////////
@@ -210,10 +200,20 @@ client.on('message', message => {
     });
     ////////////
 client.on('message', message => {
-    if (message.content.startsWith(prefix + "assistant")) {
-        message.channel.sendMessage("Senior what would you like me to do?");
+    if (message.content.startsWith(prefix + "help")) {
+        message.channel.sendMessage("Welcome to the Kosh Help Hotline. Type stats, cmds, about, or support to continue.");
 }
-    if (message.content.startsWith("Stats")) {
+    if (message.content.startsWith("cmds")) {
+	message.channel.sendMessage("Displaying Commands")
+	message.channel.sendMessage(";help ;cmds ;ping ;kick ;ban ;unban ;mute ;unmute ;serverinfo ;8ball ;invite ;support");
+}
+    if (message.content.startsWith("about")) {
+	message.channel.sendMessage("Kosh is the perfect bot for your server. Including fun commands and music for your members while also including moderation for you and your admins. Run ;invite to invite the bot");
+}
+    if (message.content.startsWith("support")) {
+	message.channel.sendMessage("For bot support or to suggest updates, join this server! Server Invite: );
+}
+    if (message.content.startsWith("stats")) {
         message.channel.sendMessage("Displaying Diagnostics")
         message.channel.sendMessage("==DIAGNOSTICS==")
 message.channel.sendMessage(message.channel.send(`= STATISTICS =
@@ -224,7 +224,7 @@ message.channel.sendMessage(message.channel.send(`= STATISTICS =
     
     /////////////////////
     client.on('message', message => {
-    if (message.content.startsWith(prefix + "Stats")) {
+    if (message.content.startsWith(prefix + "stats")) {
         message.channel.send(`= STATISTICS =
       • Mem Usage  :: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
       • Users      :: $client.users.size + "\n" +
@@ -233,7 +233,7 @@ message.channel.sendMessage(message.channel.send(`= STATISTICS =
     });
     //////////////////
     client.on('message', message => {
-    if (message.content.startsWith(prefix + "Kick")) {
+    if (message.content.startsWith(prefix + "kick")) {
         let messageArray = message.content.split(" ");
         let args = messageArray.slice(1);
     //!kick @Twisted Reason
@@ -265,8 +265,8 @@ message.channel.sendMessage(message.channel.send(`= STATISTICS =
 );
 ///////////////
 client.on('message', message => {
-    if (message.content.startsWith(prefix + "speach")) {
-	    let kickChannel = message.guild.channels.find(`name`, "announcements").send("Hey i am Kosh Say Hi!")
+    if (message.content.startsWith(prefix + "notice")) {
+	    let kickChannel = message.guild.channels.find(`name`, "announcements").send("@everyone Kosh Systems is running in this server.")
 
 	}
 	})
