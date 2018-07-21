@@ -211,7 +211,7 @@ client.on('message', message => {
 	message.channel.sendMessage("Kosh is the perfect bot for your server. Including fun commands and music for your members while also including moderation for you and your admins. Run ;invite to invite the bot");
 }
     if (message.content.startsWith("support")) {
-	message.channel.sendMessage("For bot support or to suggest updates, join this server! Server Invite: );
+	message.channel.sendMessage("For bot support or to suggest updates, join this server! Server Invite: ");
 }
     if (message.content.startsWith("stats")) {
         message.channel.sendMessage("Displaying Diagnostics")
