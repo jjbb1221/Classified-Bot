@@ -158,19 +158,10 @@ client.on('message', message => {
 })
 ///////////////////////////////
 client.on('message', message => {
-    if (message.content.startsWith(prefix + "Botinfo")) {
-        let bicon = client.user.displayAvatarURL;
-        let botembed = new Discord.RichEmbed()
-        .setDescription("Bot Information")
-        .setColor("#6100ff")
-        .setThumbnail(bicon)
-        .addField("Bot Name", client.user.username)
-        .addField("Created On", client.user.createdAt);
-    
-        return message.channel.send(botembed);
-      }
-    
-});
+    if (message.content.startsWith(prefix + "botinfo")) {
+        message.channe.sendMessage("Developed by RedstoneClaw101 and Lil Curly on 5/21/17");
+    }
+    });
 ///////////////////////
 client.on('message', message => {
     if (message.content === prefix +'ping') {
@@ -204,14 +195,13 @@ client.on('message', message => {
         message.channel.sendMessage("Welcome to the Kosh Help Hotline. Type stats, cmds, about, or support to continue.");
 }
     if (message.content.startsWith("cmds")) {
-	message.channel.sendMessage("Displaying Commands")
 	message.channel.sendMessage(";help ;cmds ;ping ;kick ;ban ;unban ;mute ;unmute ;serverinfo ;8ball ;invite ;support");
 }
     if (message.content.startsWith("about")) {
 	message.channel.sendMessage("Kosh is the perfect bot for your server. Including fun commands and music for your members while also including moderation for you and your admins. Run ;invite to invite the bot");
 }
     if (message.content.startsWith("support")) {
-	message.channel.sendMessage("For bot support or to suggest updates, join this server! Server Invite: ");
+	message.channel.sendMessage("For bot support or to suggest updates, join this server! Server Invite: https://discord.gg/mMTMhuM");
 }
     if (message.content.startsWith("stats")) {
         message.channel.sendMessage("Displaying Diagnostics")
@@ -223,6 +213,12 @@ message.channel.sendMessage(message.channel.send(`= STATISTICS =
     });
     
     /////////////////////
+    cliet.on("message", message => {
+    if (message.content.startsWith(prefix + "invite")) {
+    message.channel.sendMessage("Thank you for using Kosh Systems! Here is an auth link! Link: https://discordapp.com/api/oauth2/authorize?client_id=468272942086750208&permissions=8&scope=bot);
+    }
+    });
+    ////////////////////
     client.on('message', message => {
     if (message.content.startsWith(prefix + "stats")) {
         message.channel.send(`= STATISTICS =
@@ -270,8 +266,6 @@ client.on('message', message => {
 
 	}
 	})
-
-
     //////////////
 client.login(process.env.TOKEN)
     ///////
