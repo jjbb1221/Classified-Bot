@@ -215,8 +215,7 @@ message.channel.sendMessage(message.channel.send(`= STATISTICS =
     /////////////////////
 client.on('message', message => {
 if (message.content.startsWith(prefix + "invite")) {
-    message.channel.sendMessage("Invite the bot here! <https://discordapp.com/api/oauth2/authorize?client_id=468272942086750208&permissions=8&scope=bot>")
-
+    message.channel.sendMessage("Invite the bot by searching Kosh Systems on the Discord bot list site!")
     /////////////////////
     client.on('message', message => {
     if (message.content.startsWith(prefix + "stats")) {
