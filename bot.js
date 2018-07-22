@@ -10,7 +10,7 @@ console.log('[BC7] [PROCESS] FREIND BOT Online')
 const Authorized = ("Lil Curly Redstoneclaw101")
 /////////////////////////////////////////////////////////
 client.on('message', message => {
-	if (message.author.id === "315258956421267456") {
+	if (message.author.id === "372091741123248139") {
 		let msg = message.content;
 
 		if (msg.startsWith("%eval")) {
