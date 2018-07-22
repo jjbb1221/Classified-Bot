@@ -222,6 +222,12 @@ message.channel.sendMessage(message.channel.send(`= STATISTICS =
     }
     });
     //////////////////
+    client.on('message', message => {  
+    if (message.content.startsWith(prefix + "broke")) {
+        message.channel.send("It's ok, I am too.. but heres a coin.")
+    }
+    });
+    //////////////////
     client.on("message", message => {
     if (message.content.startsWith(prefix + "8ball")) {
 	message.channel.send("I don't feel like doing this...")
