@@ -192,16 +192,16 @@ client.on('message', message => {
     ////////////
 client.on('message', message => {
     if (message.content.startsWith(prefix + "help")) {
-        message.channel.sendMessage("Welcome to the Kosh Help Hotline. Type stats, cmds, about, or support to continue.");
+        message.channel.sendMessage("Welcome to the Kosh Help Hotline. Type stats, cmds, about, or support to continue.")
 }
     if (message.content.startsWith("cmds")) {
-	message.channel.sendMessage("prefix (;) + help, cmds, ping, kick, ban, unban, mute, unmute, serverinfo, 8ball, invite, support");
+	message.channel.sendMessage("prefix (;) + help, cmds, ping, kick, ban, unban, mute, unmute, serverinfo, 8ball, invite, support")
 }
     if (message.content.startsWith("about")) {
-	message.channel.sendMessage("Kosh is the perfect bot for your server. Including fun commands and music for your members while also including moderation for you and your admins. Run ;invite to invite the bot");
+	message.channel.sendMessage("Kosh is the perfect bot for your server. Including fun commands and music for your members while also including moderation for you and your admins. Run ;invite to invite the bot")
 }
     if (message.content.startsWith("support")) {
-	message.channel.sendMessage("For bot support or to suggest updates, join this server! Server Invite: https://discord.gg/mMTMhuM");
+	message.channel.sendMessage("For bot support or to suggest updates, join this server! Server Invite: https://discord.gg/mMTMhuM")
 }
     if (message.content.startsWith("stats")) {
         message.channel.sendMessage("Displaying Diagnostics")
@@ -212,6 +212,11 @@ message.channel.sendMessage(message.channel.send(`= STATISTICS =
 • Node       :: ${process.version}`, {code: 'asciidoc'}))}
     });
     
+    /////////////////////
+client.on('message', message => {
+if (message.content.startsWith(prefix + "invite")) {
+    message.channel.sendMessage("Invite the bot here! <https://discordapp.com/api/oauth2/authorize?client_id=468272942086750208&permissions=8&scope=bot>")
+
     /////////////////////
     client.on('message', message => {
     if (message.content.startsWith(prefix + "stats")) {
