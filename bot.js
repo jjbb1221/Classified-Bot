@@ -213,10 +213,6 @@ message.channel.sendMessage(message.channel.send(`= STATISTICS =
     });
     
     /////////////////////
-client.on('message', message => {
-if (message.content.startsWith(prefix + "invite")) {
-    message.channel.sendMessage("Invite the bot by searching Kosh Systems on the Discord bot list site!")
-    /////////////////////
     client.on('message', message => {
     if (message.content.startsWith(prefix + "stats")) {
         message.channel.send(`= STATISTICS =
