@@ -158,8 +158,8 @@ client.on('message', message => {
 })
 ///////////////////////////////
 client.on('message', message => {
-    if (message.content.startsWith(prefix + "botinfo")) {
-        message.channe.sendMessage("Developed by RedstoneClaw101 and Lil Curly on 5/21/17");
+    if (message.content === prefix +"botinfo") {
+        message.channel.sendMessage("Developed by RedstoneClaw101 and Lil Curly on 5/21/17");
     }
     });
 ///////////////////////
