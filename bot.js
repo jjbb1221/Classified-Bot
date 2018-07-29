@@ -221,12 +221,6 @@ message.channel.sendMessage(message.channel.send(`= STATISTICS =
       • Node       :: ${process.version}`, {code: 'asciidoc'});
     }
     });
-    //////////////////
-    client.on("message", message => {
-    if (message.content.startsWith(prefix + "test")) {
-	message.channel.send("V2 Commands Status: Offline, V1 Online.")
-    }
-    });
 .   //////////////////
     client.on('message', message => {  
     if (message.content.startsWith(prefix + "broke")) {
