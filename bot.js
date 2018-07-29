@@ -222,6 +222,12 @@ message.channel.sendMessage(message.channel.send(`= STATISTICS =
     }
     });
     //////////////////
+    client.on("message", message => {
+    if (message.content.startsWith(prefix + "test")) {
+	message.channel.send("V2 Commands Status: Offline, V1 Online.")
+    }
+    });
+.   //////////////////
     client.on('message', message => {  
     if (message.content.startsWith(prefix + "broke")) {
         message.channel.send("It's ok, I am too.. but heres a coin.")
