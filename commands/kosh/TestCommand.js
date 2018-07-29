@@ -12,7 +12,7 @@ class TestCommand extends Command {
   }
 
   async fn (msg) {
-    let output = 'V2 Commands Status: Online.`
+    let output = 'V2 Commands Status: Online.'
 
     msg.reply(output)
   }
