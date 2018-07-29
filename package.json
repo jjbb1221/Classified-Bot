@@ -10,9 +10,6 @@
     "discord.js": "11.1.0",
     "request": "2.81.0",
     "fs": "0.0.1-security",
-    "ms": "2.1.1",
-    "discord.js": "https://github.com/discordjs/discord.js.git#276109ed3c8ee990296af34e2ae0a6174e151c70",
-    "discord.js-commando": "https://github.com/discordjs/Commando.git#061814a24030f74073b056e9cb05782c2dfa9587",
-    "npm": "5.7.1"
+    "ms": "2.1.1"
   }
 }
