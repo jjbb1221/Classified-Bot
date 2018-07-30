@@ -1,11 +1,7 @@
 {
   "name": "Kosh",
   "description": "The perfect bot for Discord.",
-  "version": "2.0.0",
-  "engines": {
-    "npm": "5.7.x",
-    "node": "8.9.x"
-  },
+  "version": "0.0.0",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
